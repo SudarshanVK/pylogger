@@ -71,6 +71,8 @@ except Exception:
     logger.exception()
 ```
 
+## Configuration
+
 ### Controlling Caller Information
 
 You can control whether to include caller information (file and function name) in your logs:
@@ -91,8 +93,6 @@ logger_without_caller.info("This log doesn't include caller info")
 
 The `include_caller` parameter allows you to globally set whether caller information should be included in logs for each logger instance. This can be useful for controlling log verbosity or for privacy concerns in production environments.
 
-## Configuration
-
 ### Console Log Level
 
 Set the `CONSOLE_LOG_LEVEL` environment variable to control console output:
@@ -102,26 +102,6 @@ CONSOLE_LOG_LEVEL=DEBUG python your_script.py
 ```
 
 Valid levels: DEBUG, INFO, WARNING, ERROR, CRITICAL
-
-## API Reference
-
-### `Logger(log_file_path: str, include_caller: bool = True)`
-
-Initialize the logger with the path to the log file and optionally set whether to include caller information.
-
-### Logging Methods
-
-[Logging methods remain the same]
-
-### Exception Logging
-
--   `exception()`
-
-Logs the current exception with a stack trace. Local variables are not displayed for security reasons.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Author
 
