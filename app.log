@@ -1,0 +1,5 @@
+06-09-24 14:14:08 | DEBUG    | pylogger/test_logger.py::function | This is a debug message
+06-09-24 14:14:08 | INFO     | pylogger/test_logger.py::function | This is an info message
+06-09-24 14:14:08 | WARNING  | pylogger/test_logger.py::function | This is a warning message
+06-09-24 14:14:08 | ERROR    | pylogger/test_logger.py::function | This is an error message
+06-09-24 14:14:08 | CRITICAL | pylogger/test_logger.py::function | This is a critical message
