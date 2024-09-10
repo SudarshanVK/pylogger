@@ -78,22 +78,26 @@ class PyLogger:
         timestamp = self.get_timestamp()
 
         if level in [LogLevel.SUCCESS, LogLevel.FAILED, LogLevel.MESSAGE]:
-            color = (
-                "green"
-                if level == LogLevel.SUCCESS
-                else "bold red"
-                if level == LogLevel.FAILED
-                else "cyan1"
-            )
-
-            log_text = Text()
-            log_text.append(timestamp, style=color)
-            log_text.append(f" | {level.name.ljust(8)} | ", style=color)
-            log_text.append(msg, style=color)
-
-            console.print(log_text)
+            self._set_color(level, timestamp, msg)
         else:
             self.logger.log(level.value, msg)
+
+    # TODO Rename this here and in `log`
+    def _set_color(self, level, timestamp, msg):
+        color = (
+            "green"
+            if level == LogLevel.SUCCESS
+            else "bold red"
+            if level == LogLevel.FAILED
+            else "cyan1"
+        )
+
+        log_text = Text()
+        log_text.append(timestamp, style=color)
+        log_text.append(f" | {level.name.ljust(8)} | ", style=color)
+        log_text.append(msg, style=color)
+
+        console.print(log_text)
 
     def debug(self, msg: str, data: Optional[Union[Dict, List]] = None):
         self.log(LogLevel.DEBUG, msg, data)
