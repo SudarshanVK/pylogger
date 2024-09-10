@@ -21,7 +21,7 @@ all: lint test
 .PHONY: lint
 lint:
 	@echo "Running Ruff..."
-	ruff $(SRC_DIR) $(TEST_DIR) $(RUFF_FLAGS)
+	poetry run ruff check . $(RUFF_FLAGS)
 
 # Run pytest for testing
 .PHONY: test
