@@ -10,7 +10,7 @@ repository = "https://github.com/yourusername/pylogger"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-rich = "^10.0"
+rich = "^13.8.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.2"

@@ -3,3 +3,4 @@
 *.log
 .venv
 .pytest_cache
+.ruff*
